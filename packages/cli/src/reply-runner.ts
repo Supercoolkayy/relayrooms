@@ -30,11 +30,12 @@ async function main() {
   const contractAddress = getArg('contract', process.env.CONTRACT_ADDRESS || '') as Hex;
   const parentRunId = parseInt(getArg('run', '1'), 10);
   const roleToReplace = parseInt(getArg('role', '1'), 10) as 0 | 1;
-  const privateKey = (getArg(
+  const rawKey = getArg(
     'privateKey',
     process.env.PRIVATE_KEY ||
       '0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d' // Anvil account #1
-  )) as Hex;
+  );
+  const privateKey = (rawKey.startsWith('0x') ? rawKey : `0x${rawKey}`) as Hex;
 
   if (!contractAddress) {
     console.error('Error: Please provide --contract <address> or set CONTRACT_ADDRESS');

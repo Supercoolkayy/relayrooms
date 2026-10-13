@@ -18,7 +18,25 @@
 
 ---
 
-## 2. Architecture & Monorepo Structure
+## 2. Live Monad Testnet Deployment
+
+- **Network:** Monad Testnet (Chain ID `10143`)
+- **RPC URL:** `https://testnet-rpc.monad.xyz`
+- **Contract Address:** [`0xb217a5Da4dBfe6f097e948e22994d440F10719f1`](https://testnet.monadexplorer.com/address/0xb217a5Da4dBfe6f097e948e22994d440F10719f1)
+- **Deployer:** `0xB99DF9c70a4bA401CCc32DEBa43393905C80294C`
+
+### Verified Onchain Transactions:
+- **Contract Deployment:** [`0xd4b0a44aa8559bbda173e3fa913691f46dcbdefd3e27d1d664d7d52ef54f3bda`](https://testnet.monadexplorer.com/tx/0xd4b0a44aa8559bbda173e3fa913691f46dcbdefd3e27d1d664d7d52ef54f3bda)
+- **Room 1 Added:** [`0xc081fc3cb603b74caae06d209d8aa04d9c02aa0fa963e6396e8d1a108a7863ea`](https://testnet.monadexplorer.com/tx/0xc081fc3cb603b74caae06d209d8aa04d9c02aa0fa963e6396e8d1a108a7863ea)
+- **Room 2 Added:** [`0x42f741ad7e9be1c169222fe212354c4ff5aa301e513a9eec4d59a5840da455eb`](https://testnet.monadexplorer.com/tx/0x42f741ad7e9be1c169222fe212354c4ff5aa301e513a9eec4d59a5840da455eb)
+- **Room 3 Added:** [`0x2cd9cbe06ff78258f93f71cefa1867c0f8db1f68795211cf672bdae784cd1897`](https://testnet.monadexplorer.com/tx/0x2cd9cbe06ff78258f93f71cefa1867c0f8db1f68795211cf672bdae784cd1897)
+- **Genesis Run #1:** [`0x55d8646d232dba11ce102f84f22c7086a882eaa304f9147c535ba8680df2e9e6`](https://testnet.monadexplorer.com/tx/0x55d8646d232dba11ce102f84f22c7086a882eaa304f9147c535ba8680df2e9e6)
+- **Reply Run #2 (Hop 2):** [`0x6fb82e8cb7f88ebe1625937cf193ad57d2b061c73242daf02c90f2eefa18fb61`](https://testnet.monadexplorer.com/tx/0x6fb82e8cb7f88ebe1625937cf193ad57d2b061c73242daf02c90f2eefa18fb61)
+- **Reply Run #3 (Hop 3):** [`0x9b52ebe5f291a3549d08534edd87432c7ec980db55170e8c91d21dcfb820b84b`](https://testnet.monadexplorer.com/tx/0x9b52ebe5f291a3549d08534edd87432c7ec980db55170e8c91d21dcfb820b84b)
+
+---
+
+## 3. Architecture & Monorepo Structure
 
 ```text
 relayrooms/

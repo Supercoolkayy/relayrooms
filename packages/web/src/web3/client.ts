@@ -11,9 +11,9 @@ import {
 import { privateKeyToAccount } from 'viem/accounts';
 
 export const CONTRACT_ADDRESS = (import.meta.env.VITE_CONTRACT_ADDRESS ||
-  '0x5FbDB2315678afecb367f032d93F642f64180aa3') as Hex;
+  '0xb217a5Da4dBfe6f097e948e22994d440F10719f1') as Hex;
 
-export const RPC_URL = import.meta.env.VITE_RPC_URL || 'http://127.0.0.1:8545';
+export const RPC_URL = import.meta.env.VITE_RPC_URL || 'https://testnet-rpc.monad.xyz';
 
 export const RELAY_ROOMS_ABI = parseAbi([
   'function getRun(uint32 runId) external view returns ((uint32 roomId, uint32 recordingAId, uint32 recordingBId, uint32 parentRunId, uint8 finishStepA, uint8 finishStepB, uint16 score, address submitter, uint40 timestamp))',
