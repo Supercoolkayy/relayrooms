@@ -73,7 +73,7 @@ relayrooms/
 
 ---
 
-## 3. Measured Onchain Gas Costs
+## 4. Measured Onchain Gas Costs
 
 All measurements captured from live contract execution on EVM:
 
@@ -87,7 +87,7 @@ All measurements captured from live contract execution on EVM:
 
 ---
 
-## 4. Multi-Hop Relay Proof: Live Demo Flow
+## 5. Multi-Hop Relay Proof: Live Demo Flow
 
 The game demonstrates true decentralized composability:
 
@@ -99,19 +99,19 @@ The game demonstrates true decentralized composability:
 [Hop 2: Web Browser]
    Player 2 opens /#run=1 -> Hydrates directly from RPC (no backend DB)
    Player 2 replaces Role B with faster moves -> Calls publishReply()
-   Generates Run #4 onchain -> Share URL: /#run=4
+   Generates Run #2 onchain -> Share URL: /#run=2
                                   │
                                   ▼
 [Hop 3: Independent Headless CLI]
    Automated client runs:
-   node packages/cli/dist/reply-runner.js --contract 0x... --run 4 --role 0
-   Loads Run #4 via RPC, replaces Role A, verifies locally, calls publishReply()
-   Generates Run #5 onchain!
+   node packages/cli/dist/reply-runner.js --contract 0xb217a5Da4dBfe6f097e948e22994d440F10719f1 --run 2 --role 0
+   Loads Run #2 via RPC, replaces Role A, verifies locally, calls publishReply()
+   Generates Run #3 onchain!
 ```
 
 ---
 
-## 5. Quickstart & Local Reproduction
+## 6. Quickstart & Local Reproduction
 
 ### Prerequisites
 - Node.js v20+
@@ -153,8 +153,15 @@ This repository is pre-configured with [`vercel.json`](./vercel.json) for 1-clic
 
 ---
 
-## 6. Curated Rooms
+## 7. Curated Rooms
 
 1. **Room 1: The Switchback Relay** — Top & bottom chambers divided by laser barriers. Players must swap positions by coordinating pressure plates.
 2. **Room 2: Double Cross** — Two interlocking paths with alternating chokepoints.
 3. **Room 3: Synchronized Vault** — Tight timing puzzle requiring synchronized movement through the central corridor.
+
+---
+
+## 8. Demo Video & Artifacts
+
+- **📹 Gameplay & Hydration Demo:** [`demo/relayrooms_demo.mp4`](./demo/relayrooms_demo.mp4) (1m05s HD 1080p walkthrough covering onchain hydration, turn scrubber, laser door plate dynamics, and onchain verification).
+
