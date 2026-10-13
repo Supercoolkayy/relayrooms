@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "prebuild": "pnpm --filter @relayrooms/core build",
+    "build": "pnpm --filter @relayrooms/core build && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },
