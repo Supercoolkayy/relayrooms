@@ -142,7 +142,7 @@ pnpm test:diff
 
 ### 4. Deploy to Vercel
 This repository is pre-configured with [`vercel.json`](./vercel.json) for 1-click Vercel deployment:
-1. Import this repository (`intelliDean/relayrooms`) into your Vercel dashboard.
+1. Import this repository (`Supercoolkayy/relayrooms`) into your Vercel dashboard.
 2. Vercel automatically detects `vercel.json` and builds `@relayrooms/core` and `@relayrooms/web`.
 3. Set root directory to `.` (the monorepo root) and click **Deploy**.
 4. The deployed URL will hydrate directly from Monad Testnet via public RPC with zero configuration!
