@@ -3,6 +3,9 @@
 > **A browser-based cooperative puzzle game on Monad.**
 > "Here is how we escaped. Replace your part, improve our result, and send it back."
 
+**🎮 Live Game App:** [https://supercoolkayy.github.io/relayrooms/](https://supercoolkayy.github.io/relayrooms/)
+**⚡ Monad Testnet Contract:** [`0xb217a5Da4dBfe6f097e948e22994d440F10719f1`](https://testnet.monadexplorer.com/address/0xb217a5Da4dBfe6f097e948e22994d440F10719f1)
+
 ---
 
 ## 1. Project Overview & Mechanics
