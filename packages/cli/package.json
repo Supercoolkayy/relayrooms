@@ -1,0 +1,20 @@
+{
+  "name": "@relayrooms/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "relay-reply": "./dist/reply-runner.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/reply-runner.js"
+  },
+  "dependencies": {
+    "@relayrooms/core": "workspace:*",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
