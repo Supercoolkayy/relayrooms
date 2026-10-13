@@ -22,6 +22,7 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({
   const [isPublishing, setIsPublishing] = useState(false);
   const [publishedRunId, setPublishedRunId] = useState<number | null>(currentRunId ?? null);
   const [copied, setCopied] = useState(false);
+  const [publishError, setPublishError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
@@ -32,17 +33,21 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({
 
   const handlePublishClick = async () => {
     setIsPublishing(true);
+    setPublishError(null);
     try {
       const newId = await onPublish();
       if (newId) {
         setPublishedRunId(newId);
       }
+    } catch (e: unknown) {
+      const err = e as { shortMessage?: string; message?: string };
+      setPublishError(err?.shortMessage || err?.message || 'Transaction failed. Please ensure your wallet is connected to Monad Testnet.');
     } finally {
       setIsPublishing(false);
     }
   };
 
-  const shareableUrl = `${window.location.origin}/#run=${publishedRunId || 1}`;
+  const shareableUrl = `${window.location.origin}${window.location.pathname}#run=${publishedRunId || 1}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(shareableUrl);
@@ -145,6 +150,22 @@ export const ComparisonModal: React.FC<ComparisonModalProps> = ({
 
         {/* Publication & Share Action */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          {publishError && (
+            <div
+              style={{
+                padding: '10px 14px',
+                borderRadius: '8px',
+                background: 'rgba(239, 68, 68, 0.15)',
+                border: '1px solid #ef4444',
+                color: '#fca5a5',
+                fontSize: '12px',
+                textAlign: 'left',
+              }}
+            >
+              ⚠️ {publishError}
+            </div>
+          )}
+
           {publishedRunId ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <div style={{ fontSize: '12px', color: 'var(--text-muted)', textAlign: 'center' }}>
