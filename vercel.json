@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm --filter @relayrooms/core build && pnpm --filter @relayrooms/web build",
-  "outputDirectory": "packages/web/dist",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
     {

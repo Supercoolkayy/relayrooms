@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "build": "pnpm --filter @relayrooms/core build && pnpm --filter @relayrooms/web build && node -e \"fs.cpSync('packages/web/dist', 'dist', {recursive: true})\"",
     "build:core": "pnpm --filter @relayrooms/core build",
     "test:core": "pnpm --filter @relayrooms/core test",
     "test:contracts": "cd contracts && forge test -vvv",
