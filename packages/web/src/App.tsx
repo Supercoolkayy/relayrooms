@@ -12,6 +12,7 @@ import { Controls } from './components/Controls';
 import { Header } from './components/Header';
 import { ComparisonModal } from './components/ComparisonModal';
 import { fetchRunFromChain, submitPublishReply } from './web3/client';
+import { playMoveSound, playVictorySound } from './audio/sounds';
 
 // Sample pre-recorded run for Character B so newcomers play immediately
 const SAMPLE_ACTIONS_B = [
@@ -94,6 +95,7 @@ export const App: React.FC = () => {
   useEffect(() => {
     if (simulationResult.completed && currentStep === simulationResult.states.length - 1) {
       setIsModalOpen(true);
+      playVictorySound();
     }
   }, [simulationResult.completed, currentStep, simulationResult.states.length]);
 
@@ -119,6 +121,7 @@ export const App: React.FC = () => {
   // Record action
   const handleRecordAction = useCallback(
     (action: Action) => {
+      playMoveSound();
       if (activeRole === 0) {
         if (actionsA.length >= MAX_STEPS) return;
         const next = [...actionsA, action];

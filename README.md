@@ -122,40 +122,30 @@ pnpm --filter @relayrooms/cli build
 pnpm --filter @relayrooms/web build
 ```
 
-### 2. Run Test Suites
+### 2. Run Test Suites & Differential Correctness Fuzzing
 ```bash
 # TypeScript Simulation Engine Tests
-pnpm --filter @relayrooms/core test
+pnpm test:core
 
 # Foundry Solidity Verifier Tests
-cd contracts && forge test -vvv
+pnpm test:contracts
+
+# Automated Cross-Engine Differential Fuzzing (100+ random and edge-case sequences)
+pnpm test:diff
 ```
 
-### 3. Start Local Anvil Node & Deploy
-In terminal 1:
+### 3. Automated Monad Testnet Demo Walkthrough
 ```bash
-anvil --port 8545
+# Executes 1-command verification against Monad Testnet:
+./scripts/demo.sh
 ```
 
-In terminal 2:
-```bash
-cd contracts
-forge script script/DeployAndSeed.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
-```
-
-### 4. Launch Web Application
-```bash
-pnpm --filter @relayrooms/web dev
-# Open http://localhost:5173/ in your browser
-```
-
-### 5. Run the Independent Headless Client
-```bash
-node packages/cli/dist/reply-runner.js \
-  --contract 0x5FbDB2315678afecb367f032d93F642f64180aa3 \
-  --run 1 \
-  --role 1
-```
+### 4. Deploy to Vercel
+This repository is pre-configured with [`vercel.json`](./vercel.json) for 1-click Vercel deployment:
+1. Import this repository (`intelliDean/relayrooms`) into your Vercel dashboard.
+2. Vercel automatically detects `vercel.json` and builds `@relayrooms/core` and `@relayrooms/web`.
+3. Set root directory to `.` (the monorepo root) and click **Deploy**.
+4. The deployed URL will hydrate directly from Monad Testnet via public RPC with zero configuration!
 
 ---
 
